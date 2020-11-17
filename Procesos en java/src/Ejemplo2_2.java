@@ -2,7 +2,7 @@ import java.io.*;
 public class Ejemplo2_2 {    
    	public static void main(String[] args)  {
 	  Runtime r = Runtime.getRuntime();    
-	  String comando= "CMD /C DIR" ;
+	  String comando= "cmd /c direr" ;
 	  Process p=null;
       try {
   		  p = r.exec( comando );
@@ -24,7 +24,7 @@ public class Ejemplo2_2 {
 			BufferedReader brer = new BufferedReader(new InputStreamReader(StreamError));
 			String liner = null;
 			while ((liner = brer.readLine()) != null) {
-				System.out.println("ERROR >" + liner);
+				System.err.println("ERROR -->" + liner);
 			}
 		} catch (IOException ioe) {
 			ioe.printStackTrace();

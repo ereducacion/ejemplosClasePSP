@@ -5,9 +5,8 @@ public class Ejemplo2_1 {
 	public static void main(String[] args)  {
 		Runtime r = Runtime.getRuntime();    
 		String comando= "CMD /C DIR" ;
-		Process p=null;;
+		Process p=null;
 		try {
-
 			p = r.exec( comando );
 			// guardo stream donde voy a leer lo que produce este proceso
 			InputStream StreamEntrada = p.getInputStream();
@@ -17,6 +16,7 @@ public class Ejemplo2_1 {
 				System.out.println(linea); 
 			}
 			br.close();
+			StreamEntrada.close();
 		} 
 		catch (Exception e)
 		{

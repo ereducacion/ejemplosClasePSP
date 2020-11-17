@@ -1,4 +1,5 @@
 
+
 import java.io.*;
 
 /**
@@ -11,7 +12,7 @@ public class Ejemplo_completo_saludo {
 	
 	public static void main(String[] args)  {
 		Runtime r = Runtime.getRuntime();    
-		String comando= "java SaludandoAAlguien" ;
+		String comando= "java -cp bin SaludandoAAlguien";
 
 
 		Process p = null;
@@ -29,7 +30,7 @@ public class Ejemplo_completo_saludo {
 			BufferedWriter escribiendoEnProceso = new BufferedWriter (new OutputStreamWriter(StreamParaEscribirEnProceso));                      
 
 			// Le digo cual es mi nombre...
-			escribiendoEnProceso.write("Eva");
+			escribiendoEnProceso.write("Felipe");
 
 			escribiendoEnProceso.close();
 		} 
@@ -60,7 +61,7 @@ public class Ejemplo_completo_saludo {
 			BufferedReader leyendoErrorAlProceso = new BufferedReader(new InputStreamReader(StreamErrorDelProceso));
 			String liner = null;
 			while ((liner = leyendoErrorAlProceso.readLine()) != null) {
-				System.out.println("ERROR >" + liner);
+				System.err.println("ERROR >" + liner);
 			}
 		} catch (IOException ioe) {
 			ioe.printStackTrace();

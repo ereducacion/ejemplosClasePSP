@@ -15,6 +15,5 @@ public class EjemploPB3 {
     pb.redirectOutput(fOut);
     pb.redirectError(fErr); 
     pb.start(); 
-
   }
 }// EjemploPB3

@@ -9,23 +9,22 @@ public class EjemploPB1 {
 	
 	public static void main(String args[]) {
 		
-		ProcessBuilder test = new ProcessBuilder();
+		ProcessBuilder test = new ProcessBuilder("cmd", "/c", "dir");
 		Map entorno = test.environment();
 		
 		System.out.println("Variables de entorno:");
 		System.out.println(entorno);   
 
-		test = new ProcessBuilder("java", "SaludandoAAlguien", "\"Hola Mundo!!\"");
-
 		//devuelve el nombre del proceso y sus argumentos	
 		List l =test.command() ; 
 		Iterator iter = l.iterator();
 		System.out.println("Argumentos del comando:");  	
-		while (iter.hasNext())
+		while (iter.hasNext()) {
 			System.out.println(iter.next());    
-
+		}
+		
+		
 		//ejecutamos el comando DIR
-		test = test.command("CMD","/C" ,"DIR");
 		try {
 			Process p= test.start();
 			InputStream is = p.getInputStream();
@@ -35,6 +34,20 @@ public class EjemploPB1 {
 				System.out.println(linea);
 			br.close();
 		}  
-		catch (Exception e)  { e.printStackTrace(); }	
+		catch (Exception e)  { e.printStackTrace(); }
+			
+		//ejecutamos el comando DIR
+		try {
+			Process p= test.start();
+			InputStream is = p.getErrorStream();
+			BufferedReader br = new BufferedReader (new InputStreamReader (is));                      
+			String linea;
+			while((linea = br.readLine())!=null) //lee la salida de Unsaludo 
+				System.err.println(linea);
+			br.close();
+		}  
+		catch (Exception e)  { e.printStackTrace(); }
+
 	}  
+	
 }//

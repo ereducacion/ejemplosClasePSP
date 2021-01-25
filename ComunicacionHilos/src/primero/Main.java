@@ -11,6 +11,7 @@ public class Main {
 		try {
 			a.join();
 			b.join();
+			System.out.println("ME quedo a esperar que terminen");
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

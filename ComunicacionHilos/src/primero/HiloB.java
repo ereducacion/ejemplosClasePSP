@@ -10,11 +10,11 @@ public class HiloB extends Thread {
 
 	public void run() {
 		for (int j = 0; j < 300; j++) {
-			contador.decrementa();
+			contador.incrementa();
 //			try {
 //				sleep(5);
 //			} catch (InterruptedException e) {}
 		}
-		System.out.println(getName() + " contador vale " + contador.getValor());
+		//System.out.println(getName() + " contador vale " + contador.getValor());
 	}
 }

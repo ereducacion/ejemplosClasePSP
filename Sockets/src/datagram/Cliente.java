@@ -11,7 +11,7 @@ public class Cliente {
 	public static void main(String[] args) throws InterruptedException {
 		
 		int puertoServidorDestino = 6005;
-		int tamañoBufferPkt = 1024;
+		int tamagnoBufferPkt = 1024;
 	
 		DatagramSocket socket = null;
 		try {
@@ -19,7 +19,7 @@ public class Cliente {
 			// PREPARO EL DESTINO
 			InetAddress destino = Inet4Address.getByName("192.168.1.130");
 
-			byte[] mensaje = new byte[tamañoBufferPkt];
+			byte[] mensaje = new byte[tamagnoBufferPkt];
 			
 			String mensajeStr = "Hola que tal?";
 			mensaje = mensajeStr.getBytes();
@@ -37,7 +37,7 @@ public class Cliente {
 			socket.send(paqueteEnv);
 			
 			// SI QUIERO ESCUCHAR UNA RESPUESTA APROVECHO EL SOCKET QUE HE ABIERTO YO MISMA
-			byte[] bufferTemporal = new byte[tamañoBufferPkt];
+			byte[] bufferTemporal = new byte[tamagnoBufferPkt];
 			DatagramPacket paqueteRecibido = new DatagramPacket(bufferTemporal, bufferTemporal.length);
 			System.out.println("Esperando datagrama.....");
 			

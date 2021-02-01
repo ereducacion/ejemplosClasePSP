@@ -11,7 +11,7 @@ public class Servidor {
 	public static void main(String[] args) {
 	
 		int puertoEscucha = 6005;
-		int tamañoBufferPkt = 1024;
+		int tamagnoBufferPkt = 1024;
 	
 		DatagramSocket socket= null;
 		try {
@@ -23,7 +23,7 @@ public class Servidor {
 			System.out.println("\tEscucho por: " + puertoEscucha + " y la ip " + origen.getHostAddress());
 
 			// recibir un paquete
-			byte[] bufferTemporal = new byte[tamañoBufferPkt];
+			byte[] bufferTemporal = new byte[tamagnoBufferPkt];
 			DatagramPacket paqueteRecibido = new DatagramPacket(bufferTemporal, bufferTemporal.length);
 			System.out.println("Esperando datagrama.....");
 			
